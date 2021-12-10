@@ -6,7 +6,7 @@ const createmockData = (ArrLength) => {
       (item = {
         titles: titles[index],
         releaseDate: randomDate('01/01/1990', '01/01/2021') || '-',
-        story: description[randomInt(0, description.length - 1)] || '-',
+        plot: description[randomInt(0, description.length - 1)] || '-',
         poster: `./images/posters/${index + 1}.jpg`,
         boxOffice: randomInt(300000000, 600000000) || 0,
         rating: random(1, 10).toFixed(1) || 0,
