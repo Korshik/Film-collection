@@ -1,5 +1,94 @@
-const titles=['Jurassic World: Fallen Kingdom'];
-const directors=['J.A. Bayona'];
-const description=['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ante ex, vestibulum vitae sem at, dapibus rhoncus nisl. Quisque ut erat et arcu euismod vestibulum.'];
+import { getRandomBetween } from "./utils";
 
-export { titles, directors, description};
+export const films = [
+  {
+    titles: 'bla',
+    releaseDate: '01/01/2001',
+    plot: 'Lorem ipsum',
+    poster: `./images/posters/jurassic-world.jpg`,
+    boxOffice: getRandomBetween(300000, 600000) ,
+    rating: getRandomBetween(1, 10),
+    director: 'Christopher Nolan',
+  },
+  {
+    titles: 'bla',
+    releaseDate: '01/01/2001',
+    plot: 'Lorem ipsum',
+    poster: `./images/posters/jurassic-world.jpg`,
+    boxOffice: getRandomBetween(300000, 600000) ,
+    rating: getRandomBetween(1, 10),
+    director: 'Christopher Nolan',
+  },
+  {
+    titles: 'bla',
+    releaseDate: '01/01/2001',
+    plot: 'Lorem ipsum',
+    poster: `./images/posters/jurassic-world.jpg`,
+    boxOffice: getRandomBetween(300000, 600000) ,
+    rating: getRandomBetween(1, 10),
+    director: 'Christopher Nolan',
+  },
+  {
+    titles: 'bla',
+    releaseDate: '01/01/2001',
+    plot: 'Lorem ipsum',
+    poster: `./images/posters/jurassic-world.jpg`,
+    boxOffice: getRandomBetween(300000, 600000) ,
+    rating: getRandomBetween(1, 10),
+    director: 'Christopher Nolan',
+  },
+  {
+    titles: 'bla',
+    releaseDate: '01/01/2001',
+    plot: 'Lorem ipsum',
+    poster: `./images/posters/jurassic-world.jpg`,
+    boxOffice: getRandomBetween(300000, 600000) ,
+    rating: getRandomBetween(1, 10),
+    director: 'Christopher Nolan',
+  },
+  {
+    titles: 'bla',
+    releaseDate: '01/01/2001',
+    plot: 'Lorem ipsum',
+    poster: `./images/posters/jurassic-world.jpg`,
+    boxOffice: getRandomBetween(300000, 600000) ,
+    rating: getRandomBetween(1, 10),
+    director: 'Christopher Nolan',
+  },
+  {
+    titles: 'bla',
+    releaseDate: '01/01/2001',
+    plot: 'Lorem ipsum',
+    poster: `./images/posters/jurassic-world.jpg`,
+    boxOffice: getRandomBetween(300000, 600000) ,
+    rating: getRandomBetween(1, 10),
+    director: 'Christopher Nolan',
+  },
+  {
+    titles: 'bla',
+    releaseDate: '01/01/2001',
+    plot: 'Lorem ipsum',
+    poster: `./images/posters/jurassic-world.jpg`,
+    boxOffice: getRandomBetween(300000, 600000) ,
+    rating: getRandomBetween(1, 10),
+    director: 'Christopher Nolan',
+  },
+  {
+    titles: 'bla',
+    releaseDate: '01/01/2001',
+    plot: 'Lorem ipsum',
+    poster: `./images/posters/jurassic-world.jpg`,
+    boxOffice: getRandomBetween(300000, 600000) ,
+    rating: getRandomBetween(1, 10),
+    director: 'Christopher Nolan',
+  },
+  {
+    titles: 'bla',
+    releaseDate: '01/01/2001',
+    plot: 'Lorem ipsum',
+    poster: `./images/posters/jurassic-world.jpg`,
+    boxOffice: getRandomBetween(300000, 600000) ,
+    rating: getRandomBetween(1, 10),
+    director: 'Christopher Nolan',
+  },
+];
