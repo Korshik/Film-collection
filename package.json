@@ -1,0 +1,21 @@
+{
+  "name": "film-collection",
+  "version": "1.0.0",
+  "description": "film-collection",
+  "main": "index.js",
+  "type": "module",
+  
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Korshik/Film-collection.git"
+  },
+  "author": "Viktorya Chekunova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Korshik/Film-collection/issues"
+  },
+  "homepage": "https://github.com/Korshik/Film-collection#readme"
+}
