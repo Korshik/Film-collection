@@ -1,6 +1,15 @@
-/**## Реализовать функциональность поиска
-
-тут учитывайте что после удаления запроса приложение должно вернуться в исходное положение, согласно выбранного фильма. 
-## **Поиск по фильмам**
-
-Поиск осуществляется по названию фильма, любое слово из фильма должно учитываться в поиске. При выполнения поиска сбрасывается выбранный фильтр (порядок фильмов должен быть такой как пришел с сервера).*/
+const searchInput=document.querySelector('.search__input');
+const sortingButtons=document.querySelectorAll('.sorting .button');
+debugger
+const createSearch=(render, data) =>{
+    searchInput.addEventListener('keyup', (event)=>{
+        const inputValue=event.target.value;
+        if (inputValue){
+            render (data.filter((data)=> data.titles.toLowerCase.includes(inputValue.toLowerCase())));
+            sortingButtons.forEach((item)=> item.classList.remove('.button_cheked'));}
+            if (!inputValue){
+                return render(data);
+            }
+        });
+    };
+export{createSearch,sortingButtons, searchInput }
