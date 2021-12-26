@@ -1,4 +1,4 @@
-export let myFilmList = [];
+let myFilmList = [];
 export const getToken = fetch('https://fe08-films.herokuapp.com/auth', 
 {method: 'POST'})
 .then ((response) => {
@@ -22,7 +22,8 @@ function getFilms(token) {
     })
         .then(data => {
             myFilmList = data['films']
-            return getFilmList(myFilmList);
+            return renderFilmList(myFilmList);
 
 });
 } 
+export {getFilms}
