@@ -1,6 +1,6 @@
 import { getRandomBetween } from "./utils";
 
-export const films = [
+ const films = [
   {
     title: 'bla',
     releaseDate: '01/01/2001',
