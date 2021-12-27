@@ -1,8 +1,8 @@
 import { getRandomBetween } from "./utils";
 
-export const films = [
+ const films = [
   {
-    titles: 'bla',
+    title: 'bla',
     releaseDate: '01/01/2001',
     plot: 'Lorem ipsum',
     poster: `./images/posters/jurassic-world.jpg`,
@@ -11,7 +11,7 @@ export const films = [
     director: 'Christopher Nolan',
   },
   {
-    titles: 'bla',
+    title: 'bla',
     releaseDate: '01/01/2001',
     plot: 'Lorem ipsum',
     poster: `./images/posters/jurassic-world.jpg`,
@@ -20,7 +20,7 @@ export const films = [
     director: 'Christopher Nolan',
   },
   {
-    titles: 'bla',
+    title: 'bla',
     releaseDate: '01/01/2001',
     plot: 'Lorem ipsum',
     poster: `./images/posters/jurassic-world.jpg`,
@@ -29,7 +29,7 @@ export const films = [
     director: 'Christopher Nolan',
   },
   {
-    titles: 'bla',
+    title: 'bla',
     releaseDate: '01/01/2001',
     plot: 'Lorem ipsum',
     poster: `./images/posters/jurassic-world.jpg`,
@@ -38,7 +38,7 @@ export const films = [
     director: 'Christopher Nolan',
   },
   {
-    titles: 'bla',
+    title: 'bla',
     releaseDate: '01/01/2001',
     plot: 'Lorem ipsum',
     poster: `./images/posters/jurassic-world.jpg`,
@@ -47,7 +47,7 @@ export const films = [
     director: 'Christopher Nolan',
   },
   {
-    titles: 'bla',
+    title: 'bla',
     releaseDate: '01/01/2001',
     plot: 'Lorem ipsum',
     poster: `./images/posters/jurassic-world.jpg`,
@@ -56,7 +56,7 @@ export const films = [
     director: 'Christopher Nolan',
   },
   {
-    titles: 'bla',
+    title: 'bla',
     releaseDate: '01/01/2001',
     plot: 'Lorem ipsum',
     poster: `./images/posters/jurassic-world.jpg`,
@@ -65,7 +65,7 @@ export const films = [
     director: 'Christopher Nolan',
   },
   {
-    titles: 'bla',
+    title: 'bla',
     releaseDate: '01/01/2001',
     plot: 'Lorem ipsum',
     poster: `./images/posters/jurassic-world.jpg`,
@@ -74,7 +74,7 @@ export const films = [
     director: 'Christopher Nolan',
   },
   {
-    titles: 'bla',
+    title: 'bla',
     releaseDate: '01/01/2001',
     plot: 'Lorem ipsum',
     poster: `./images/posters/jurassic-world.jpg`,
@@ -83,7 +83,7 @@ export const films = [
     director: 'Christopher Nolan',
   },
   {
-    titles: 'bla',
+    title: 'bla',
     releaseDate: '01/01/2001',
     plot: 'Lorem ipsum',
     poster: `./images/posters/jurassic-world.jpg`,

@@ -1,2 +1,0 @@
-import{maxLength}from './utils'
-
