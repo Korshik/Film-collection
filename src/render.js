@@ -1,72 +1,76 @@
-import {myFilmList} from './api.js';
-    
-function showFilms(myFilmList) {
-    for (let i = 0; i < myFilmList.length; i++){
-    let poster = myFilmList[i].Poster;
-    let filmTitle = myFilmList[i].Title;
-    let rating = myFilmList[i].imdbRating;
-    let release = myFilmList[i].Released;
-    let director = myFilmList[i].Director;
-    let budget = myFilmList[i].BoxOffice;
-    let plot = myFilmList[i].Plot;
-    // заменить полученными из Api данными
+// import { maxLength } from "./utils.js";
 
-    // console.log(myFilmList[i]);
+const filmList = document.querySelector(".film-list");
 
-    const myfilmList = document.createElement('div');
-    div.addClassName='film-list'; /**создаю контейнер для наполнения фильмами */
+function deleteCard() {
+  const card = document.querySelectorAll(".card");
+  for (let i = 0; i < card.length; i++) {
+    card[i].remove();
+  }
+}
 
-    mokData.forEach((item) => {
-        myfilmList.appendChild(createFilmCard(item));
-
-    })
-
-    const createFilmCard = (item) => {
-    const cardContainer = document.createElement('div');
-    cardContainer.addClassName('card');
-
-    const cardHeader=document.createElement('div');
-    cardHeader.addClassName='card-header';
-    cardHeader.innerHTML= `<img class='card-header__image' src="${item.poster}">`
-    cardContainer.appendChild(cardHeader);
-
-    const cardTitle = document.createElement('h2');
-    cardTitle.addClassName('card-header__title');
-    cardTitle.innerText = item.title;
-    cardHeader.after(cardTitle);
-
-    const cardBody = document.createElement('div');
-    cardBody.addClassName('card__body');
-    cardBody.innerText+= item.body;
-    cardBody.after('cardTitle');
-
-    const cardFooter=document.createElement('div');
-    cardFooter.addClassName('card__footer');
-
-    const cardButton=document.createElement('button');
-    cardButton.addClassName('card__button');
-    cardFooter.appendChild(cardButton);
-    cardFooter.after(cardBody);
-
+function createDataFilms(data) {
+  const getArray = data;
+  let gottenArray = getArray.map((element) => {
+    if (element.BoxOffice === "N/A") {
+      element.BoxOffice === 0;
     }
-    return itemContainer;
 
-   
-    // // Card
-    // let filmCardContainer = createElement(filmCardClass, div, "");
-    // filmCardContainer.append(createCardImage(poster));
-    // filmCardContainer.append(createCardElement(cardTitleClass, h2, filmTitle));
+    if (element.Released === null) {
+      element.Released = "-";
+    }
 
-    // // Card Body
-    // let cardBody = createContainer(cardBodyClass);
-    // cardBody.append(getRating(rating));
-    // cardBody.append(getReleaseDate(release));
-    // cardBody.append(getDirector(director));
-    // cardBody.append(getBudget(budget));
-    // cardBody.append( getPlot(plot));
+    if (element.Director === null) {
+      element.Director = "-";
+    }
 
-    // filmCardContainer.append(cardBody);
+    if (element.Plot.length >= 140) {
+      element.Plot = element.Plot.slice(0, 137) + "...";
+    }
 
-    // }
+    return element;
+  });
+
+  // sortingElements(gottenArray)
+  // getSearching(gottenArray)
+
+  // madeCardsFilms(gottenArray)
+  // saveChosenElement(gottenArray)
+  // selectChosenElement()
+  return gottenArray;
 }
+
+function getFilmCard(data) {
+  let elemTemplate = document.querySelector("#card-template");
+  data.forEach((item) => {
+    let clonElements = elemTemplate.content.cloneNode(true);
+    clonElements.querySelector(".card-header__image").src = item.Poster;
+    const title = clonElements.querySelector(".card-header__title");
+    title.textContent = item.Title;
+    const rating = clonElements.querySelector(
+      ".film-info__rating.film-info__text"
+    );
+    rating.textContent = item.imdbRating;
+    const realizDate = clonElements.querySelector(
+      ".film-info__release-date>.film-info__text"
+    );
+    realizDate.textContent = item.Released;
+    const director = clonElements.querySelector(
+      ".film-info__director.film-info__text"
+    );
+    director.textContent = item.Director;
+    const budget = clonElements.querySelector(
+      ".film-info__box-office.film-info__text"
+    );
+    budget.textContent = `${item.BoxOficce}`;
+    const description = clonElements.querySelector(
+      ".film-info__box-office.film-info__text"
+    );
+    description.textContent = maxLength(Plot);
+    т;
+    filmList.appendChild(clonElements);
+  });
+  // return getFilmCard;
 }
+
+export { createDataFilms, getFilmCard, deleteCard };

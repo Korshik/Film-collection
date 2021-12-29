@@ -1,21 +1,32 @@
-import { films } from './mock.js';
-import { getRandomBetween } from './utils';
-
-const createmockData = (array) => {
-  let newArray = array.map((item) => {
-    const randomFilm = films[getRandomBetween(0,9)];
-    (item = {
-      title = [index],
-      releaseDate = /**генерация случайной даты в диапазоне 01.01.1990-01.01.2021  или - */
-
-
+export function getFilmsCards(arr) {
+    const filmsarr = arr
+    let newarr = filmsarr.map((element) => {
+  
+      if (element.BoxOffice == 'N/A') {
+        element.BoxOffice = 0
+      }
+  
+      if (element.Released === null) {
+        element.Released = '-'
+      }
+  
+      if (element.Director === null) {
+        element.Director = '-'
+      }
+  
+      if (element.Plot.length >= 140) {
+        element.Plot = element.Plot.slice(0, 137) + '...'
+      }
+  
+      return element
     })
-
-    return {
-      ...randomFilm,
-      ...item,
-    }
-  });
-  return array;
-};
-export { createmockData };
+  
+    sortingElements(newarr)
+    getSearching(newarr)
+  
+    madeCardsFilms(newarr)
+    saveChosenElement(newarr)
+    selectChosenElement()
+    return newarr
+  }
+//   export { getFilmsCards }
