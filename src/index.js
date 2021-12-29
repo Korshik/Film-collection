@@ -1,6 +1,9 @@
 // import { createSorting } from './sorting.js'*/
-import {getToken} from './api.js'
-// console.log('some', createSorting)
-console.log(getToken());
-import {myFilmList} from './api.js';
-console.log(myFilmList());
+import { getFilms, getToken } from "./api.js";
+import { createDataFilms } from "./render.js";
+
+getToken
+.then((token) => getFilms(token))
+.then((data) => createDataFilms(data))
+.then(kek => console.log(kek));
+
