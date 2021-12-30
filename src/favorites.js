@@ -1,10 +1,15 @@
-function createFavorites(event){
-const addFavorite=event.target.closest(".button_add");
-const removeFavorite=event.target.closest(".button_remove");
-const card=event.target.closest(".card");
+const svg = document.getElementById('svgImg');
+const cardFooter = 'card__footer';
+const checkFavorite = document.getElementById('favorite');
+const addClassToButton = 'button-add';
+const removeClassFromButton = 'button_remove';
 
-if (addFavorite) {
-    removeClass(addFavorite, addButtonClass)
-}
+document.body.addEventListener('click', addFavoriteFilms);
+checkFavorite.addEventListener('change', showFavotiteFilms)
 
+function addFavoriteFilms(event){
+    const addFavoriteFilms = event.target.closest('.button_add');
+    const removeFavoriteFilms = event.target.closest('.button_remove');
+    const card = event.target.closest('.card');
+    let favoriteFilms = {};
 }

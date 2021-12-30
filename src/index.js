@@ -1,9 +1,9 @@
 // import { createSorting } from './sorting.js'*/
 import { getFilms, getToken } from "./api.js";
-import { createDataFilms } from "./render.js";
-
+import { createDataFilms, getFilmCard } from "./render.js";
+// import {sortedRating} from './'
 getToken
-.then((token) => getFilms(token))
-.then((data) => createDataFilms(data))
-.then(kek => console.log(kek));
+.then(getFilms)
+.then(createDataFilms)
+.then(getFilmCard)
 

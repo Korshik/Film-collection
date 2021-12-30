@@ -20,6 +20,8 @@ export async function getFilms(token) {
   })
   .then(response => response.json())
   .then(data => data["films"]);
+
+  
     // myFilmList = data["films"];
     // return myFilmList;
     // return data["films"];
