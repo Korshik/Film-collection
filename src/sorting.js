@@ -1,45 +1,46 @@
-function removeAllClasses() {
-  document.querySelectorAll('.card').forEach(element => element.remove());
-}
+import { getFilmCard, deleteCard } from './render.js'
 
-function removeClass(element, remove) {
-  if(element.classList.contains(remove)) {
-      element.classList.remove(remove);
-  }
-}
-function addClass(element, add) {
-  if (!element.classList.contains(add)) {
-      element.classList.add(add);
-  }
-}
-function sortedByItem(item) {
-  return (a, b) => a[item] < b[item] ? 1 : -1;
-}
+// import { getSearching } from './function-search.js'
 
-function sortedRating() {
-  removeClass(releaseButton, checkButton);
-  removeClass(budgetButton, checkButton);
-  addClass(ratingButton, checkButton);
-  removeAllClasses();
-  createDataFilms(arraySort.sort(sortedByItem(ratingField)));
-}
-function sortedReleaseDate(){
-  removeClass(ratingButton, checkButton);
-  removeClass(budgetButton, checkButton);
-  addClass(releaseButton, checkButton);
-  removeAllClasses();
-  createDataFilms(arraySort.sort(function (a, b){
-    return new Date(b.Released).getTime() - new Date(a.Released).getTime()
-  }));
+// import { selectChosenElement } from './save-chosen.js'
 
-}
-function sortedByBudget(){
-  removeClass(releaseButton, checkButton);
-  removeClass(ratingButton, checkButton);
-  addClass(budgetButton, checkButton);
-  removeAllClasses();
-  createDataFilms(arraySort.sort(function(a,b){
-    return b.Budget.replace(/\D/g,'') - a.Budget.replace(/\D/g,'')
-  }));
-}
-export { removeAllClasses, sortedRating } 
+const ratingButton = document.getElementById('rating')
+const realisedButton = document.getElementById('releaseDate')
+const budgetButton = document.getElementById('boxOffice')
+const sortingPanel = document.querySelector('.control-panel.sorting');
+const sortingButtons = document.querySelectorAll('sorting .button');
+
+function createSorting(array) {
+  sortingPanel.addEventListener('click', (event) => {
+    
+    let { target } = event;
+    let choice = event.target.id;
+
+    if (choice === 'rating') {
+
+      sortingButtons.forEach((item) => item.classList.remove('button_checked'));
+      target.classList.add('button_checked');
+
+      (array.sort((value1, value2) => value2.rating * 10 - value1.rating * 10));
+
+    }
+    if (choice === 'releaseDate') {
+
+      sortingButtons.forEach((item) => item.classList.remove('button_checked'));
+      target.classList.add('button_checked');
+
+      (array.sort((data1, data2) => new Date(data2.releaseDate) - new Date(data1.releaseDate)));
+    }
+    if (choice === 'boxOffice') {
+
+      sortingButtons.forEach((item) => item.classList.remove('button_checked'));
+      target.classList.add('button_checked');
+
+      (array.sort((value1, value2) => value2.boxOffice - value1.boxOffice));
+    }
+  });
+  return array
+};
+    
+
+export { createSorting }

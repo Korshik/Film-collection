@@ -1,3 +1,4 @@
+import { createSorting } from "./sorting.js";
 const filmList = document.querySelector(".film-list");
 
 function deleteCard() {
@@ -27,9 +28,15 @@ element.Plot = element.Plot.slice(0, 137) + "...";
 }
 
 return element;
+
 });
+createSorting(getArray);
+
+
+getFilmCard(getArray);
 
 return gottenArray;
+
 }
 
 function getFilmCard(data) {

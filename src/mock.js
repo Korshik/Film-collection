@@ -1,4 +1,3 @@
-// import { getRandomBetween } from "./utils";
 
  const films = [
   {
@@ -92,3 +91,5 @@
     director: 'Christopher Nolan',
   },
 ];
+export {
+  title, director }

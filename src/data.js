@@ -1,4 +1,4 @@
-import { titles, directors, description } from './mock.js';
+import { title, director } from './mock.js';
 
 const createmockData = (ArrLength) => {
   let array = [...Array(ArrLength).keys()].map(
